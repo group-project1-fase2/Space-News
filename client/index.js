@@ -21,8 +21,8 @@ $(document).ready(() => {
     $("#section-space").hide()
     $("#jumbotron").hide()
     $("#footer").hide()
-    $("#discussion").show()
-    $("#news").show()
+    $("#discussion").hide()
+    $("#news").hide()
     $("footer").hide()
   }
 })
