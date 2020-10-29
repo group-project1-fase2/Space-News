@@ -1,0 +1,111 @@
+body {
+  background-color: #e8e8e8;
+  /* color: #ffffff; */
+  min-height: 1200px;
+
+  font-family: 'Assistant', sans-serif;
+}
+
+.image-register img {
+  position: absolute;
+  right: 7rem;
+  top: 4.5rem;
+}
+
+.button-manual {
+  padding: 10px 0 10px 0;
+  border-radius: 10px;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 15px;
+  background-color: #1C4169;
+  transition: 0.5s;
+}
+
+.button-manual:hover {
+  background-color: #061d35;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.register {
+  height: 100vh;
+}
+
+.image-register {
+  background: url("../assets/astronaut.jp.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.card-manual {
+  height: 100vh;
+}
+
+.row-manual {
+  height: 100vh;
+  width: 100wh;
+}
+
+footer {
+  background-color: #1C4169;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.navbar .nav-item {
+  margin-left: 50px;
+  color: #ffffff;
+  font-family: 'Assistant', sans-serif;
+}
+
+.jumbotron {
+  color: #343434;
+  min-height: 120vh;
+  margin-top: -70px;
+}
+
+.jumbotron h1 {
+  margin-top: 300px;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.card {
+  border-radius: 8px;
+}
+
+.card-body .card-title {
+  color: #1C4169;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.card-subtitle,
+.card-text {
+  font-family: 'Assistant', sans-serif;
+}
+
+.section-space {
+  background-color: #c2c2c2;
+  min-height: 500px;
+  padding-top: 20px;
+  margin-top: 50px;
+}
+
+.section-space h5 {
+  font-family: 'Montserrat', sans-serif;
+  color: #8d8d8d;
+}
+
+.section-space .card-btn {
+  background-color: #1C4169;
+  color: #ffffff;
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+.card-btn:hover {
+  background-color: #061d35;
+  transition: 0.5s;
+}
