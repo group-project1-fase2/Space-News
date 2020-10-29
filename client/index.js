@@ -24,6 +24,42 @@ $(document).ready(() => {
     }
 })
 
+function registerPage() {
+    $("#login-page").hide()
+    $("#homepage").hide()
+    $("#register").show()
+    $("#section-rocket").hide()
+    $("#section-space").hide()
+    $("#jumbotron").hide()
+    $("#footer").hide()
+}
+
+function register(e) {
+    e.preventDefault();
+        const first_name = $('#firstName').val();
+        const last_name = $('#lastName').val();
+        const email = $('#register-email').val();
+        const password = $('#register-password').val();
+        const birth_date = $('#birthDate').val();
+        $.ajax({
+            method: "POST",
+            url: SERVER + "/auth/register",
+            data: {
+                first_name,
+                last_name,
+                email,             
+                password,                
+                birth_date
+            }
+        })
+        .done(response => {
+            console.log(response);
+        })
+        .fail(err => {
+            console.log(err);
+        });
+}
+
 function login(e) {
     e.preventDefault();
         const email = $('#email').val();

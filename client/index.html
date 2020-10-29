@@ -22,7 +22,7 @@
         <div class="row row-manual">
           <div class="col-sm-4">
             <h1 class="text-muted text-center my-5">Register your account</h1>
-            <form action="">
+            <form onsubmit="register(event)">
               <div class="form-group">
                 <input type="text" placeholder="First Name" class="form-control mb-4 py-4" id="firstName">
               </div>
@@ -30,10 +30,10 @@
                 <input type="text" placeholder="Last Name" class="form-control mb-4 py-4" id="lastName">
               </div>
               <div class="form-group">
-                <input type="email" placeholder="Email" class="form-control mb-4 py-4" id="email-register">
+                <input type="email" placeholder="Email" class="form-control mb-4 py-4" id="register-email">
               </div>
               <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control mb-4 py-4" id="password-register">
+                <input type="password" placeholder="Password" class="form-control mb-4 py-4" id="register-password">
               </div>
               <div class="form-group">
                 <input type="date" placeholder="Birth date" class="form-control mb-4 py-4" id="birthDate">
@@ -74,6 +74,7 @@
               <button type="submit" class="button-manual btn">Sign In</button>
               <button class="btn button-manual"><img src="assets/icon-google.png" class="mr-3" width="20px" alt="" srcset="">Sign In wth Google</button>
             </form>
+            <button onclick="registerPage()" class="btn">Sign Up</button>
         </div>
       </div>
     </div>
