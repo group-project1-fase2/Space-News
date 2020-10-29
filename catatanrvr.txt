@@ -1,0 +1,5 @@
+https://api.spacexdata.com/v4/launches/upcoming -> name (mission)
+https://api.spacexdata.com/v4/rockets/:id (rockets id from launches upcoming) -> name, country (rockets and country)
+https://api.spacexdata.com/v4/launches/upcoming -> date_local (time (Target Date))
+https://api.spacexdata.com/v4/launchpads/:id (launchpads id from launches upcoming)-> full_name (Pad location)
+https://api.spacexdata.com/v4/payloads/:id (payloads id from launches upcoming)-> customers (Customer Organization) 
