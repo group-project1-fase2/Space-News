@@ -46,6 +46,12 @@ body {
   width: 100wh;
 }
 
+.login .link {
+  text-decoration: underline;
+  margin-left: 120px;
+  text-align: center;
+}
+
 
 .section-left .col-sm-8 {
   margin-left: -20px;
