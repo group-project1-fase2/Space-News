@@ -1,13 +1,77 @@
 const serverSpace = "http://localhost:3000/spaceX"
-$("document").ready(() => {
-    $("#homepage").show()
-    $("#register").hide()
-    $("#section-rocket").show()
-    $("#section-space").hide()
-    renderLaunches()
+const SERVER = "http://localhost:3000"
+
+
+$(document).ready(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+        $("#login-page").hide()
+        $("#homepage").show()
+        $("#register").hide()
+        $("#section-rocket").show()
+        $("#section-space").show()
+        $("#jumbotron").show()
+        $("#footer").show()
+        renderLaunches()
+    } else {
+        $("#login-page").show()
+        $("#homepage").hide()
+        $("#register").hide()
+        $("#section-rocket").hide()
+        $("#section-space").hide()
+        $("#jumbotron").hide()
+        $("#footer").hide()
+    }
 })
 
+function login(e) {
+    e.preventDefault();
+        const email = $('#email').val();
+        const password = $('#password').val();
+        console.log(email, password);
+        $.ajax({
+            method: "POST",
+            url: SERVER + "/auth/login",
+            data: {
+                email :email,
+                password : password
+            }
+        })
+        .done(response => {
+            const token = response.access_token;
+            localStorage.setItem('token', token);
+            renderLaunches()
+            $("#login-page").hide()
+            $("#homepage").show()
+            $("#register").hide()
+            $("#section-rocket").show()
+            $("#section-space").show()
+            $("#jumbotron").show()
+            $("#footer").show()
+        })
+        .fail(err => {
+            console.log(err);
+        });
+}
+
+function logout() {
+    $("#login-page").show()
+    $("#homepage").hide()
+    $("#register").hide()
+    $("#section-rocket").hide()
+    $("#section-space").hide()
+    $("#jumbotron").hide()
+    $("#footer").hide()
+    $('#email').val('')
+    $('#password').val('')
+    localStorage.removeItem('token');
+}
+
 function renderLaunches() {
+    let customer 
+    let rockets
+    let launchpadId
+    let rocketId
     $.ajax({
         method: "GET",
         url: serverSpace +`/launches/upcoming`,
@@ -15,11 +79,10 @@ function renderLaunches() {
     .done(res => {
         // console.log(res, "ini res ajax")
         res.forEach(result => {
-            let customer 
-            let rockets
+            
             // console.log(result)
-            let launchpadId = result.launchpad
-            let rocketId = result.rocket
+            launchpadId = result.launchpad
+            rocketId = result.rocket
             getCustomerLaunches(result.payloads[0])
             .done(({customers}) => {
                 // console.log(test.customers[0])
@@ -51,9 +114,7 @@ function renderLaunches() {
                     })
                 })
             })
-        
-
-            
+  
         })
     })
     .fail(err => console.log(err))
