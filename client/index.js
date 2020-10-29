@@ -20,8 +20,9 @@ $(document).ready(() => {
     $("#section-rocket").hide()
     $("#section-space").hide()
     $("#jumbotron").hide()
-    $("#discussion").hide()
-    $("#news").hide()
+    $("#footer").hide()
+    $("#discussion").show()
+    $("#news").show()
     $("footer").hide()
   }
 })
