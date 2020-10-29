@@ -4,7 +4,7 @@ class UserRocketController {
     static async getAll(req, res, next) {
         try {
             const userRocket = await UserRocket.findAll();
-            res,status(200).json(userRocket);
+            res.status(200).json(userRocket);
         } catch (error) {
             next(error);
         }

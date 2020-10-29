@@ -1,4 +1,5 @@
 'use strict';
+const { Router } = require('express');
 const {
   Model
 } = require('sequelize');
@@ -14,7 +15,9 @@ module.exports = (sequelize, DataTypes) => {
       Rocket.belongsToMany(models.User, {
         through: models.UserRocket,
         foreignKey: 'RocketId'
-      })
+      });
+
+      Rocket.hasMany(models.UserRocket)
     }
   };
   Rocket.init({
