@@ -2,13 +2,13 @@ body {
   background-color: #e8e8e8;
   /* color: #ffffff; */
   min-height: 1200px;
-  height: 100%;
-  font-family: "Assistant", sans-serif;
+
+  font-family: 'Assistant', sans-serif;
 }
 
 .image-register img {
   position: absolute;
-  right: 7.5rem;
+  right: 7rem;
   top: 4.5rem;
 }
 
@@ -18,7 +18,7 @@ body {
   width: 100%;
   color: #fff;
   margin-bottom: 15px;
-  background-color: #1c4169;
+  background-color: #1C4169;
   transition: 0.5s;
 }
 
@@ -46,6 +46,13 @@ body {
   width: 100wh;
 }
 
+.login .link {
+  text-decoration: underline;
+  margin-left: 120px;
+  text-align: center;
+}
+
+
 .section-left .col-sm-8 {
   margin-left: -20px;
 }
@@ -57,7 +64,7 @@ body {
 }
 
 footer {
-  background-color: #1c4169;
+  background-color: #1C4169;
   color: #ffffff;
   padding: 20px;
 }
@@ -65,7 +72,7 @@ footer {
 .navbar .nav-item {
   margin-left: 50px;
   color: #ffffff;
-  font-family: "Assistant", sans-serif;
+  font-family: 'Assistant', sans-serif;
 }
 
 .jumbotron {
@@ -76,7 +83,7 @@ footer {
 
 .jumbotron h1 {
   margin-top: 300px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #ffffff;
   font-weight: 700;
 }
@@ -86,14 +93,21 @@ footer {
 }
 
 .card-body .card-title {
-  color: #1c4169;
-  font-family: "Montserrat", sans-serif;
+  color: #1C4169;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 }
 
 .card-subtitle,
 .card-text {
-  font-family: "Assistant", sans-serif;
+  font-family: 'Assistant', sans-serif;
+}
+
+.section-space .card-btn {
+  background-color: #1C4169;
+  color: #ffffff;
+  transition: 0.5s;
+  margin-left: 10px;
 }
 
 .section-space {
@@ -104,18 +118,58 @@ footer {
 }
 
 .section-space h5 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #8d8d8d;
 }
 
-.section-space .card-btn {
-  background-color: #1c4169;
+.news .card-btn {
+  background-color: #1C4169;
   color: #ffffff;
-  margin-left: 10px;
   transition: 0.5s;
+  width: 100%;
 }
 
 .card-btn:hover {
   background-color: #061d35;
+  color: #ffffff;
   transition: 0.5s;
+}
+
+.news .card {
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.news a {
+  text-decoration: underline;
+}
+
+.discussion h5 {
+  font-family: 'Montserrat', sans-serif;
+  color: #343434
+}
+
+.discussion .post-btn {
+  background-color: #1C4169;
+  color: #ffffff;
+  transition: 0.5s;
+  width: 100%;
+  margin-top: 25px;
+  height: 80px;
+}
+
+.post-btn:hover {
+  background-color: #061d35;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.comment-sec {
+  margin-top: -50px;
+  margin-left: 20px;
+}
+
+.comment-sec2 {
+  margin-left: 50px;
+  margin-bottom: 30px;
 }

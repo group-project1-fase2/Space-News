@@ -75,11 +75,11 @@
                 <input type="password" placeholder="Password" class="form-control mb-4 py-4" name="email" id="password">
               </div>
               <button type="submit" class="button-manual btn">Sign In</button>
-              <div class="g-signin2" data-onsuccess="onSignIn"></div>
-              <!-- <button class="btn button-manual"><img src="assets/icon-google.png" class="mr-3" width="20px" alt="" srcset="" data-onsuccess="onSignIn">Sign In wth Google</button> -->
+              <a class="g-signin2" data-onsuccess="onSignIn"></a>
+              <!-- <button class="btn button-manual" data-onsuccess="onSignIn"><img src="assets/icon-google.png" class="mr-3" width="20px" alt="" srcset="">Sign In wth Google</button> -->
             </form>
-            <button onclick="registerPage()" class="btn">Sign Up</button>
-          </div>
+            <button onclick="registerPage()" class="btn link">Create your account</button>
+        </div>
       </div>
     </div>
   </section>
@@ -94,7 +94,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-  
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -127,7 +127,7 @@
   <!-- ROCKET LAUNCHES -->
   <div class="container" id="section-rocket">
     <h1 class="display-5 mb-5">Upcoming Rocket Launches</h1>
-    <div class="row" id="content-launches" >
+    <div class="row" id="content-launches">
       <!-- ini 1 card template -->
       <!-- <div class="col-lg-12 mb-4">
         <div class="card shadow" style="width: 100%;">
@@ -146,9 +146,9 @@
   <!-- END ROCKET LAUNCHES -->
 
   <!-- Space NASA Content -->
-  <section class="section-space" id="section-space">
+  <section class="section-space">
     <div class="container">
-      <h1 class="display-5 mb-5 mt-5">All About Space</h1>
+      <h1 class="display-5 mb-5 mt-5">Featured Space News</h1>
       <div class="row">
         <div class="col">
           <div class="card shadow mb-5">
@@ -158,13 +158,15 @@
             <div class="card-body">
               <img src="assets/rover-mars.jpg" class="mb-3 rounded mx-auto d-block" alt="" srcset="">
               <button class="btn card-btn"><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
-              <button class="btn card-btn"><img src="assets/more-icon.png" width="20px" class="mr-2" alt="">More Details</button>
-              <p class="card-text col-lg-12 mt-3 mb-3">This picture was taken on Earth date: Wed Aug 10 2005, or Sol 548 on Mars. Captured with the
+              <p class="card-text text-justify col-lg-12 mt-3 mb-3">This picture was taken on Earth date: Wed Aug 10 2005, or Sol 548 on Mars. Captured with the
                 Front Hazard Avoidance Camera (FHAZ) aboard the Opportunity rover. Opportunity was
                 launched from Earth on Mon Jul 07 2003 and has been on Mars since Sun Jan 25 2004. Sadly,
                 we lost communication with Opportunity in June of 2018 and mission was declared complete
                 on February 13th, 2019. All images and mission data compliments of NASA. RIP Oppy.</p>
             </div>
+          </div>
+          <div class="d-flex justify-content-center mb-5">
+            <button class="btn card-btn "><img src="assets/more-icon.png" width="20px" class="mr-2" alt="">More Topics</button>
           </div>
         </div>
       </div>
@@ -172,6 +174,116 @@
   </section>
   <!-- END Space NASA Content -->
 
+  <!-- News Page -->
+  <section id="news">
+    <div class="container news">
+      <h1 class="mb-5 mt-5">
+        All About Space
+      </h1>
+      <div class="row mb-3">
+        <div class="col-lg-4">
+          <div class="card" style="width: 20rem;">
+            <img src="assets/astronaut.jp.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button class="btn card-btn"><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
+              <div class="text-center mt-3">
+                <a href="#">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card" style="width: 20rem;">
+            <img src="assets/astronaut.jp.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button class="btn card-btn"><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
+              <div class="text-center mt-3">
+                <a href="#">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card" style="width: 20rem;">
+            <img src="assets/astronaut.jp.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button class="btn card-btn"><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
+              <div class="text-center mt-3">
+                <a href="#">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END News Page -->
+
+  <!-- Discussion Page -->
+  <section id="discussion">
+    <div class="container discussion">
+      <h1 class="display-5 mb-5 mt-5">Discussion</h1>
+      <div class="row">
+        <div class="col">
+          <div class="card shadow px-5 mb-5">
+            <div class="mt-3 text-center">
+              <h5 class="card-text">MARS OPPORTUNITY ROVER PICTURE OF THE DAY</h5>
+            </div>
+            <div class="card-body">
+              <img src="assets/rover-mars.jpg" class="mb-3 rounded mx-auto d-block" alt="" srcset="">
+              <p class="card-text text-justify col-lg-12 mt-3 mb-3">This picture was taken on Earth date: Wed Aug 10 2005, or Sol 548 on Mars. Captured with the
+                Front Hazard Avoidance Camera (FHAZ) aboard the Opportunity rover. Opportunity was
+                launched from Earth on Mon Jul 07 2003 and has been on Mars since Sun Jan 25 2004. Sadly,
+                we lost communication with Opportunity in June of 2018 and mission was declared complete
+                on February 13th, 2019. All images and mission data compliments of NASA. RIP Oppy,
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea minima unde nisi modi aperiam, debitis aut voluptate, natus, laudantium nobis reprehenderit cumque consequuntur quisquam optio sequi eligendi sit ullam. Dolor at provident a amet ab quo perferendis, velit architecto quia atque unde fuga et. Blanditiis quae quia placeat assumenda aperiam!</p>
+            </div>
+
+            <form action="">
+              <div class="form-group comment-sec">
+                <div class="row">
+                  <div class="col-8 ml-3">
+                    <label for="comment-section"></label>
+                    <textarea class="form-control" id="comment-section" rows="3" placeholder="Write your comment"></textarea>
+                  </div>
+                  <div class="col-2">
+                    <button class="btn btn-lg w-75 post-btn">Post</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="comment-sec2">
+              <h3 class="display-5 text-muted mt-3 mb-4">User Comments</h3>
+              <div class="row mb-3">
+                <div class="card w-75">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-2 d-none d-lg-block">
+                        <img class="mr-4" src="assets/usericon.png" alt="">
+                      </div>
+                      <div class="col">
+                        <h5 class="card-title">User Name</h5>
+                        <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam adipisci fugiat ducimus ipsam, nobis sit placeat repellendus alias atque nesciunt laboriosam, laborum deserunt? Ullam, excepturi inventore maiores corporis architecto aliquid..
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, possimus deleniti maxime minima eius hic odit atque saepe unde voluptatem asperiores, debitis corrupti fugiat dolorem dolor eveniet aliquam modi quis fuga nam veniam aliquid? Dolor quae laboriosam rerum maxime obcaecati officia vel veritatis sint libero voluptatibus, tempore eos omnis excepturi ex animi veniam necessitatibus numquam, nostrum neque maiores facilis ratione. Consectetur ab atque ipsa
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END Discussion Page -->
 
   <!-- testing login berhasil dan dapet token -->
   <div class="testing-login">
