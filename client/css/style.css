@@ -46,6 +46,17 @@ body {
   width: 100wh;
 }
 
+
+.section-left .col-sm-8 {
+  margin-left: -20px;
+}
+
+.section-left .logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
 footer {
   background-color: #1C4169;
   color: #ffffff;
