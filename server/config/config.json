@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "postgres",
-    "password": "UD2014FR",
-    "database": "SpaceDB",
+    "password": "admin",
+    "database": "spaceNews_development",
     "host": "localhost",
     "dialect": "postgres"
   },
