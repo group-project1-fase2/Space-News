@@ -2,6 +2,8 @@ const router = require('express').Router()
 const ControllerNasa = require('../controllers/ControllerNasa')
 const UserNasaController = require('../controllers/userNasaController');
 
+const authentication = require('../middlewares/authentication')
+
 router.get('/', ControllerNasa.nasa)
 router.get('/asteroid', ControllerNasa.asteroid)
 router.get('/earthObservation', ControllerNasa.earthObservation)

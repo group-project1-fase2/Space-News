@@ -3,6 +3,11 @@ const {token} = require('../helpers/jwt');
 const {comparePassword} = require('../helpers/bcrypt')
 const {OAuth2Client} = require('google-auth-library');
 
+const mailgun = require("mailgun-js");
+const api_key = process.env.APIKEY;
+const DOMAIN =  process.env.DOMAIN;
+const mg = mailgun({apiKey: api_key, domain: DOMAIN});
+
 class AuthController {
     static async register(req, res, next) {
         try {
@@ -13,7 +18,24 @@ class AuthController {
                 password: req.body.password,
                 birth_date: req.body.birth_date
             }
-            console.log(newUser);
+
+            if (newUser) {
+                const data ={
+                    from: 'From Space News <rivari2223@gmail.com>',
+                    to: newUser.email,
+                    subject: 'Hello',
+                    text: 'Create account success please login!'
+                };
+
+                mg.messages().send(data, function (error, body) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log(body);
+                    }
+                });
+            }
+
             const user = await User.create(newUser);
             res.status(201).json({
                 id: +user.id,
