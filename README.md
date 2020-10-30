@@ -440,3 +440,534 @@
       "message": "NOT FOUND"
     }
     ```
+**RESTful Endpoints**
+---
+- `GET /nasa/asteroid`
+
+* **URL**
+
+  `/nasa/asteroid`
+
+* **Method:**
+
+  `GET`
+
+* **Header:**
+
+  None
+  
+*  **URL Params**
+
+   **Required:**
+ 
+    start_date[date]
+    end_date[date]`
+
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    ```json
+    [
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2015 RC)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3726710"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2015 TX237)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3730577"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2006 WO1)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3359445"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2010 XT10)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3553060"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2015 RO36)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3727181"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2016 EK158)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3747356"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2016 RT)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3758838"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2015 UG)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3731587"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2015 RN83)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3727639"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2018 DM4)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3799865"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "465633 (2009 JR5)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2465633"
+    },
+    {
+        "tanggal": "2015-09-08",
+        "name": "(2008 QV11)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3426410"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2015 RG2)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3726788"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2015 RX83)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3727662"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2015 RY83)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3727663"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2015 FC35)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3713989"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2015 RL35)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3727036"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2015 RH36)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3727179"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2019 QK4)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3843641"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2016 RN41)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3759690"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2018 RZ2)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3827337"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "440012 (2002 LE27)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2440012"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2016 RU33)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3759353"
+    },
+    {
+        "tanggal": "2015-09-07",
+        "name": "(2020 BY)",
+        "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3986741"
+    }
+]
+ 
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+    **Content:**
+    ```json
+    {
+      "message": "NOT FOUND"
+    }
+    ```
+    **RESTful Endpoints**
+---
+- `GET /nasa/earthObservation`
+
+* **URL**
+
+  `/nasa/earthObservation`
+
+* **Method:**
+
+  `GET`
+
+* **Header:**
+
+  None
+  
+*  **URL Params**
+
+   **Required:**
+  lon[float]
+  lat[float]
+  date[date]
+
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    encript of image
+ 
+* **Error Response:**
+
+  * **Code:** 400 <br />
+    **Content:**
+    ```json
+    {
+      "message": "Request failed"
+    }
+    ```
+    **RESTful Endpoints**
+---
+- `GET /nasa/earthObservation`
+
+* **URL**
+
+  `/nasa/earthObservation`
+
+* **Method:**
+
+  `GET`
+
+* **Header:**
+
+  None
+  
+*  **URL Params**
+
+   **Required:**
+  lon[float]
+  lat[float]
+  date[date]
+
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    encript of image
+ 
+* **Error Response:**
+
+  * **Code:** 400 <br />
+    **Content:**
+    ```json
+    {
+      "message": "Request failed"
+    }
+    ```
+    **RESTful Endpoints**
+---
+- `GET /nasa/earthObservation`
+
+* **URL**
+
+  `/nasa/earthObservation`
+
+* **Method:**
+
+  `GET`
+
+* **Header:**
+
+  None
+  
+*  **URL Params**
+
+   **Required:**
+  lon[float]
+  lat[float]
+  date[date]
+
+
+* **Data Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    encript of image
+ 
+* **Error Response:**
+
+  * **Code:** 400 <br />
+    **Content:**
+    ```json
+    {
+      "message": "Request failed"
+    }
+    ```
+
+     **RESTful Endpoints**
+---
+- `GET /nasa/marsRoverPhotos`
+
+* **URL**
+
+  `/nasa/marsRoverPhotos`
+
+* **Method:**
+
+  `GET`
+
+* **Header:**
+
+  None
+  
+*  **URL Params**
+
+   **Required:**
+  None
+
+* **Data Params**
+
+ date=2016-6-3
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** 
+    ```json
+    
+    {
+        "camera": "Front Hazard Avoidance Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FRB_518233322EDR_F0542280FHAZ00206M_.JPG"
+    },
+    {
+        "camera": "Front Hazard Avoidance Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FLB_518233322EDR_F0542280FHAZ00206M_.JPG"
+    },
+    {
+        "camera": "Front Hazard Avoidance Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FLB_518233101EDR_F0542280FHAZ00206M_.JPG"
+    },
+    {
+        "camera": "Front Hazard Avoidance Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FRB_518233101EDR_F0542280FHAZ00206M_.JPG"
+    },
+    {
+        "camera": "Front Hazard Avoidance Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FLB_518226958EDR_F0542280FHAZ00323M_.JPG"
+    },
+    {
+        "camera": "Front Hazard Avoidance Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FRB_518226958EDR_F0542280FHAZ00323M_.JPG"
+    },
+    {
+        "camera": "Rear Hazard Avoidance Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/rcam/RLB_518226992EDR_F0542280RHAZ00323M_.JPG"
+    },
+    {
+        "camera": "Rear Hazard Avoidance Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/rcam/RRB_518226992EDR_F0542280RHAZ00323M_.JPG"
+    },
+    {
+        "camera": "Mast Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mcam/1360MR0066540000701501E01_DXXX.jpg"
+    },
+    {
+        "camera": "Mast Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mcam/1360MR0066530000701500E01_DXXX.jpg"
+    },
+    {
+        "camera": "Mast Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mcam/1360MR0066540000701501I01_DXXX.jpg"
+    },
+    {
+        "camera": "Mast Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mcam/1360MR0066530000701500I01_DXXX.jpg"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ccam/CR0_518229543EDR_F0542280CCAM02360M_.JPG"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ccam/CR0_518229005EDR_F0542280CCAM02360M_.JPG"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ccam/CR0_518228623EDR_F0542280CCAM02360M_.JPG"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ccam/CR0_518228245EDR_F0542280CCAM02360M_.JPG"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ccam/CR0_518227422EDR_F0542280CCAM01360M_.JPG"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/soas/rdr/ccam/CR0_518229543PRC_F0542280CCAM02360L1.PNG"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/soas/rdr/ccam/CR0_518229005PRC_F0542280CCAM02360L1.PNG"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/soas/rdr/ccam/CR0_518228623PRC_F0542280CCAM02360L1.PNG"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/soas/rdr/ccam/CR0_518228245PRC_F0542280CCAM02360L1.PNG"
+    },
+    {
+        "camera": "Chemistry and Camera Complex",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/soas/rdr/ccam/CR0_518227422PRC_F0542280CCAM01360L1.PNG"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001220010502185C00_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001220010502183C00_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001480010502181C00_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001900010502179C00_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001220010502185I01_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001220000502184I01_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001220010502183I01_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001220000502182I01_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001480010502181I01_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001480000502180I01_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001900010502179I01_DXXX.jpg"
+    },
+    {
+        "camera": "Mars Hand Lens Imager",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001900000502178I01_DXXX.jpg"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NLB_518233356EDR_F0542280NCAM00207M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NLB_518233152EDR_F0542280NCAM00207M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NLB_518230361EDR_F0542280NCAM00286M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NLB_518230330EDR_F0542280NCAM00286M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NLB_518230299EDR_F0542280NCAM00286M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NLB_518230269EDR_F0542280NCAM00286M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NLB_518230185EDR_F0542280NCAM00286M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NRB_518233356EDR_F0542280NCAM00207M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NRB_518233152EDR_F0542280NCAM00207M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NRB_518230361EDR_F0542280NCAM00286M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NRB_518230330EDR_F0542280NCAM00286M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NRB_518230299EDR_F0542280NCAM00286M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NRB_518230269EDR_F0542280NCAM00286M_.JPG"
+    },
+    {
+        "camera": "Navigation Camera",
+        "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/ncam/NRB_518230185EDR_F0542280NCAM00286M_.JPG"
+    }
+
+ 
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+    **Content:**
+    ```json
+    {
+      "message": "NOT FOUND"
+    }
+    ```
+    **RESTful Endpoints**
+---
