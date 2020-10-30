@@ -1,5 +1,6 @@
 const serverSpace = "http://localhost:3000/spaceX"
 const SERVER = "http://localhost:3000"
+const serverNasa = "http://localhost:3000/nasa"
 
 $(document).ready(() => {
   const token = localStorage.getItem('token');
@@ -13,6 +14,7 @@ $(document).ready(() => {
   } else {
     homeBeforeLogin()
     renderLaunches()
+    renderNasaLandingPage()
   }
 })
 
@@ -54,7 +56,7 @@ function homeBeforeLogin() {
   $("#section-space").show()
   $("#jumbotron").show()
   $("#footer").show()
-  $("#nav-logout").hide()
+  $("#nav-logout").show()
   $("#nav-login").show()
   $("#nav-register").show()
   $("#news").show()
@@ -247,10 +249,44 @@ function onSignIn(googleUser) {
     .fail(err => console.log(err))
 }
 
-//sign out
-function signOut() {
-  const auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function() {
-    console.log('User signed out.');
-  });
+
+// nasa api
+function renderNasaLandingPage() {
+  const date = "2010-06-16"
+  $.ajax({
+    method: "GET",
+    url: server+`?${date}`
+  })
+  .done(response => {
+    console.log(response)
+  })
+  .fail(err => console.log(err))
+  // $("#landing-page-nasa").append(`
+  // <div>
+  //     <h1 class="display-5 mb-5 mt-5">Featured Space News</h1>
+  //     <div class="row">
+  //       <div class="col">
+  //         <div class="card shadow mb-5">
+  //           <div class="card-header text-center">
+  //             <h5 class="card-text">MARS OPPORTUNITY ROVER PICTURE OF THE DAY</h5>
+  //           </div>
+  //           <div class="card-body">
+  //             <img src="assets/rover-mars.jpg" class="mb-3 rounded mx-auto d-block" alt="" srcset="">
+  //             <button class="btn card-btn"><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
+  //             <p class="card-text text-justify col-lg-12 mt-3 mb-3">This picture was taken on Earth date: Wed Aug 10 2005, or Sol 548 on Mars. Captured with the
+  //               Front Hazard Avoidance Camera (FHAZ) aboard the Opportunity rover. Opportunity was
+  //               launched from Earth on Mon Jul 07 2003 and has been on Mars since Sun Jan 25 2004. Sadly,
+  //               we lost communication with Opportunity in June of 2018 and mission was declared complete
+  //               on February 13th, 2019. All images and mission data compliments of NASA. RIP Oppy.</p>
+  //           </div>
+  //         </div>
+  //         <div class="d-flex justify-content-center mb-5">
+  //           <button class="btn card-btn "><img src="assets/more-icon.png" width="20px" class="mr-2" alt="">More Topics</button>
+  //         </div>
+  //       </div>
+  //     </div>    
+  //   </div>
+  // `)
 }
+
+

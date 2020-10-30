@@ -8,10 +8,11 @@ class ControllerNasa {
       method: "GET",
       url: `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`,
       params: {
-        date: req.body.date
+        date: req.query.date
       }
     })
       .then(function (response) {
+        console.log(response.data)
         res.status(200).json(response.data)
       })
       .catch(function (error) {
