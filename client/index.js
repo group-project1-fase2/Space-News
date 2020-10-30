@@ -7,6 +7,9 @@ $(document).ready(() => {
   if (token) {
     afterLogin()
     renderLaunches()
+    renderNasaLandingPage()
+    renderContentListNasa() // render list content
+
 
     //testing login berhasil dan dpt token ***
     $(".testing-login").append(`<p>token: ${token}</p>`).show()
@@ -15,6 +18,7 @@ $(document).ready(() => {
     homeBeforeLogin()
     renderLaunches()
     renderNasaLandingPage()
+    renderContentListNasa() // render list content
   }
 })
 
@@ -250,43 +254,85 @@ function onSignIn(googleUser) {
 }
 
 
+
+
+
 // nasa api
-function renderNasaLandingPage() {
-  const date = "2010-06-16"
+// render content list
+// 2020-10-02 - 2020-10-12
+function renderContentListNasa(){
+  let dayCount
+  for (let i = 2; i < 11; i++) {
+    let day = "0"
+    dayCount = day + String(i)
+    renderContentList(dayCount)
+  }
+}
+
+function renderContentList(day){
+  let dateRaw = "2020-10-"
+  let date = dateRaw + day
   $.ajax({
     method: "GET",
-    url: server+`?${date}`
+    url: serverNasa+`?date=${date}`
   })
   .done(response => {
-    console.log(response)
+    $("#content-list-nasa").append(`
+      <div class="col-lg-4">
+      <div class="card" style="width: 20rem;">
+        <img src="${response.hdurl}" class="card-img-top img-fluid" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${response.title}</h5>
+          <p class="card-text text-justify">${response.explanation}.</p>
+          <button class="btn card-btn"><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
+          <div class="text-center mt-3">
+            <a href="#">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    `)
   })
   .fail(err => console.log(err))
-  // $("#landing-page-nasa").append(`
-  // <div>
-  //     <h1 class="display-5 mb-5 mt-5">Featured Space News</h1>
-  //     <div class="row">
-  //       <div class="col">
-  //         <div class="card shadow mb-5">
-  //           <div class="card-header text-center">
-  //             <h5 class="card-text">MARS OPPORTUNITY ROVER PICTURE OF THE DAY</h5>
-  //           </div>
-  //           <div class="card-body">
-  //             <img src="assets/rover-mars.jpg" class="mb-3 rounded mx-auto d-block" alt="" srcset="">
-  //             <button class="btn card-btn"><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
-  //             <p class="card-text text-justify col-lg-12 mt-3 mb-3">This picture was taken on Earth date: Wed Aug 10 2005, or Sol 548 on Mars. Captured with the
-  //               Front Hazard Avoidance Camera (FHAZ) aboard the Opportunity rover. Opportunity was
-  //               launched from Earth on Mon Jul 07 2003 and has been on Mars since Sun Jan 25 2004. Sadly,
-  //               we lost communication with Opportunity in June of 2018 and mission was declared complete
-  //               on February 13th, 2019. All images and mission data compliments of NASA. RIP Oppy.</p>
-  //           </div>
-  //         </div>
-  //         <div class="d-flex justify-content-center mb-5">
-  //           <button class="btn card-btn "><img src="assets/more-icon.png" width="20px" class="mr-2" alt="">More Topics</button>
-  //         </div>
-  //       </div>
-  //     </div>    
-  //   </div>
-  // `)
 }
+
+//render konten landing page
+function renderNasaLandingPage(day) {
+  let dateRaw = "2020-10-"
+  let date = dateRaw + day
+  let contentLandingPage = "2020-10-01"
+  $.ajax({
+    method: "GET",
+    url: serverNasa+`?date=${day ? date : contentLandingPage}`
+  })
+  .done(response => {
+    console.log(response, "ini nasa")
+    $("#landing-page-nasa").append(`
+    <div>
+        <h1 class="display-5 mb-5 mt-5">Featured Space News</h1>
+        <div class="row">
+          <div class="col">
+            <div class="card shadow mb-5">
+              <div class="card-header text-center">
+                <h5 class="card-text">${response.title}</h5>
+              </div>
+              <div class="card-body">
+                <img src="${response.hdurl}" class="mb-3 rounded mx-auto d-block img-fluid" alt="" srcset="">
+                <button class="btn card-btn"><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
+                <p class="card-text text-justify col-lg-12 mt-3 mb-3">${response.explanation}</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center mb-5">
+              <button class="btn card-btn "><img src="assets/more-icon.png" width="20px" class="mr-2" alt="">More Topics</button>
+            </div>
+          </div>
+        </div>    
+      </div>
+    `)
+  })
+  .fail(err => console.log(err))
+}
+
+
 
 
