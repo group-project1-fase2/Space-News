@@ -1,5 +1,7 @@
 'use strict';
-const { Router } = require('express');
+const {
+  Router
+} = require('express');
 const {
   Model
 } = require('sequelize');
@@ -12,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Rocket.belongsToMany(models.User, {
-        through: models.UserRocket,
-        foreignKey: 'RocketId'
-      });
+      // Rocket.belongsToMany(models.User, {
+      //   through: models.UserRocket,
+      //   foreignKey: 'RocketId'
+      // });
     }
   };
   Rocket.init({

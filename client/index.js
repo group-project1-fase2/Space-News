@@ -40,6 +40,8 @@ $(".btn-login").on("click", () => {
   $("#footer").hide()
   $("#news").hide()
   $("#discussion").hide()
+
+
 })
 
 $(".btn-register").on("click", () => {
@@ -78,6 +80,7 @@ function registerPage() {
   $("#section-space").hide()
   $("#jumbotron").hide()
   $("#footer").hide()
+  $("error-regsiter").hide()
 }
 
 function register(e) {
@@ -103,6 +106,8 @@ function register(e) {
     })
     .fail(err => {
       console.log(err);
+      $("#error-register").append(`<div class="alert alert-danger" role="alert">Field must be filled!
+</div>`).show()
     });
 }
 
@@ -136,9 +141,13 @@ function login(e) {
       $("#section-space").show()
       $("#jumbotron").show()
       $("#footer").show()
+      $("#nav-logout").show()
+      $("#error-login").hide()
     })
     .fail(err => {
       console.log(err);
+      $("#error-login").append(`<div class="alert alert-danger" role="alert">Wrong Username/Password!
+      </div>`).show()
     });
 }
 
@@ -268,7 +277,7 @@ function onSignIn(googleUser) {
 // nasa api
 // render content list
 // 2020-10-02 - 2020-10-12
-function renderContentListNasa(){
+function renderContentListNasa() {
   let dayCount
   for (let i = 2; i < 11; i++) {
     let day = "0"
@@ -277,31 +286,31 @@ function renderContentListNasa(){
   }
 }
 
-function renderContentList(day){
+function renderContentList(day) {
   let dateRaw = "2020-10-"
   let date = dateRaw + day
   $.ajax({
-    method: "GET",
-    url: serverNasa+`?date=${date}`
-  })
-  .done(response => {
-    $("#content-list-nasa").append(`
-      <div class="col-lg-4">
-      <div class="card" style="width: 20rem;">
-        <img src="${response.hdurl}" class="card-img-top img-fluid" alt="...">
+      method: "GET",
+      url: serverNasa + `?date=${date}`
+    })
+    .done(response => {
+      $("#content-list-nasa").append(`
+      <div class="col-lg-6">
+      <div class="card shadow" style="width: 30rem;">
+        <img src="${response.hdurl}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${response.title}</h5>
-          <p class="card-text text-justify">${response.explanation}.</p>
-          <button class="btn card-btn"><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
-          <div class="text-center mt-3">
+          <button class="btn card-btn "><img src="assets/discuss-icon.png" width="20px" class="mr-2" alt="">Discussion</button>
+          <div class="mt-3 mb-2">
             <a href="#">Details</a>
           </div>
+          <p class="card-text text-justify">${response.explanation}.</p>
         </div>
       </div>
     </div>
     `)
-  })
-  .fail(err => console.log(err))
+    })
+    .fail(err => console.log(err))
 }
 
 //render konten landing page
@@ -310,12 +319,12 @@ function renderNasaLandingPage(day) {
   let date = dateRaw + day
   let contentLandingPage = "2020-10-01"
   $.ajax({
-    method: "GET",
-    url: serverNasa+`?date=${day ? date : contentLandingPage}`
-  })
-  .done(response => {
-    console.log(response, "ini nasa")
-    $("#landing-page-nasa").append(`
+      method: "GET",
+      url: serverNasa+`?date=${day ? date : contentLandingPage}`
+    })
+    .done(response => {
+      console.log(response, "ini nasa")
+      $("#landing-page-nasa").append(`
     <div>
         <h1 class="display-5 mb-5 mt-5">Featured Space News</h1>
         <div class="row">
@@ -337,10 +346,6 @@ function renderNasaLandingPage(day) {
         </div>    
       </div>
     `)
-  })
-  .fail(err => console.log(err))
+    })
+    .fail(err => console.log(err))
 }
-
-
-
-
