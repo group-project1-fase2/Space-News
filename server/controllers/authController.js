@@ -1,6 +1,7 @@
 const {User} = require('../models/index');
 const {token} = require('../helpers/jwt'); 
 const {comparePassword} = require('../helpers/bcrypt')
+const {OAuth2Client} = require('google-auth-library');
 
 class AuthController {
     static async register(req, res, next) {
@@ -58,6 +59,48 @@ class AuthController {
             next(error);
         }
     }
+
+    static async googleLogin(req, res, next) {
+        const google_access_token = req.body.google_access_token
+        const client = new OAuth2Client(process.env.CLIENT_ID_GOOGLE);
+        try {
+            const ticket = await client.verifyIdToken({
+                idToken: google_access_token,
+                audience: process.env.CLIENT_ID_GOOGLE,  // Specify the CLIENT_ID of the app that accesses the backend
+                // Or, if multiple clients access the backend:
+                //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+            });
+            const payload = ticket.getPayload();
+            const user = await User.findOne({
+                where: {
+                    email: payload.email
+                }
+            })
+            // console.log(user, "ini user dr auth gogole")
+            if(user) {
+                const access_token = token({
+                    id: user.id,
+                    email: user.email
+                });
+                res.status(200).json(access_token)
+            } else {
+                const newUser = {
+                    email: user.email,
+                    password: "randomdulu"
+                }
+                const createUser = await User.create(newUser, {returning: true})
+                const access_token = token({
+                    id: createUser.id,
+                    email: createUser.email
+                });
+                res.status(200).json(access_token)
+            }
+        } catch (error) {
+            next(error)
+        }
+          
+    }
+
 }
 
 module.exports = AuthController;

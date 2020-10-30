@@ -3,3 +3,8 @@ https://api.spacexdata.com/v4/rockets/:id (rockets id from launches upcoming) ->
 https://api.spacexdata.com/v4/launches/upcoming -> date_local (time (Target Date))
 https://api.spacexdata.com/v4/launchpads/:id (launchpads id from launches upcoming)-> full_name (Pad location)
 https://api.spacexdata.com/v4/payloads/:id (payloads id from launches upcoming)-> customers (Customer Organization) 
+
+
+oauth google
+Client id= 717871587662-q37moar7kaqn6ubrtog9hkbbouthr6hg.apps.googleusercontent.com
+client secret = lArzGP23v_TcDnEJvdbnCJe6

@@ -56,7 +56,7 @@ function homeBeforeLogin() {
   $("#section-space").show()
   $("#jumbotron").show()
   $("#footer").show()
-  $("#nav-logout").show()
+  $("#nav-logout").hide()
   $("#nav-login").show()
   $("#nav-register").show()
   $("#news").show()
