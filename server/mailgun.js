@@ -9,39 +9,15 @@ const mailgun = require("mailgun-js");
 const api_key = process.env.APIKEY;
 const DOMAIN =  process.env.DOMAIN;
 const mg = mailgun({apiKey: api_key, domain: DOMAIN});
-const data = [
+const data =
     {
         from: 'From Space News <hpratama324@gmail.com>',
         to: emailRivari,
         subject: 'Hello',
         text: 'Testing some Mailgun awesomness!'
-    },
-    {
-        from: 'From Space News <hpratama324@gmail.com>',
-        to: emailFauza,
-        subject: 'Hello',
-        text: 'Testing some Mailgun awesomness!'
-    },
-    {
-        from: 'From Space News <hpratama324@gmail.com>',
-        to: emailDicky,
-        subject: 'Hello',
-        text: 'Testing some Mailgun awesomness!'
-    },
-    {
-        from: 'From Space News <hpratama324@gmail.com>',
-        to: emailHaris,
-        subject: 'Hello',
-        text: 'Testing some Mailgun awesomness!'
-    }
-];
+    };
 
-let loop; 
-data.forEach(el => {
-    loop = el;
-})
-
-mg.messages().send(loop, function (error, body) {
+mg.messages().send(data, function (error, body) {
     if (error) {
         console.log(error);
     } else {

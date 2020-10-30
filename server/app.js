@@ -14,9 +14,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
+app.use('/auth', authRouter);
 app.use("/spaceX", routes)
 app.use("/nasa", nasaRouter)
-app.use('/auth', authRouter);
 app.use('/nasa', nasaRouter);
 app.use(errorHandlers);
 
