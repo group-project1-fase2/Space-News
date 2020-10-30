@@ -53,7 +53,11 @@ class AuthController {
                     id: find.id,
                     email: find.email
                 });
-                res.status(200).json({access_token});
+                const data = {
+                    id: find.id,
+                    name: find.fullName()
+                }
+                res.status(200).json({access_token, data});
             }
         } catch (error) {
             next(error);
