@@ -24,6 +24,8 @@
         <div class="row row-manual">
           <div class="col-sm-4">
             <h1 class="text-muted text-center my-5">Register your account</h1>
+              <div id="error-register">
+              </div>
             <form onsubmit="register(event)">
               <div class="form-group">
                 <input type="text" placeholder="First Name" class="form-control mb-4 py-4" id="firstName">
@@ -67,6 +69,7 @@
       <div class="section-right ml-5 mt-5">
         <div class="col-lg-12">
           <h1 class="text-center text-muted mb-5">Sign In to your account</h3>
+            <div id="error-login"></div>
             <form onsubmit="login(event)">
               <div class="form-group">
                 <input type="email" placeholder="Email" class="form-control mb-4 py-4" name="email" id="email">
@@ -88,7 +91,7 @@
 
   <!-- HOMEPAGE -->
   <div id="homepage">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="#"><img src="assets/space-logo.png" alt="" srcset=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,10 +111,10 @@
             <li class="nav-item">
               <button class="btn btn-dark text-uppercase btn-login" id="nav-login">login</button>
             </li>
-            <li class="nav-item ml-3">
+            <li class="nav-item">
               <button class="btn btn-dark text-uppercase btn-register" id="nav-register">register</button>
             </li>
-            <li class="nav-item ml-1">
+            <li class="nav-item mr-2">
               <button class="btn btn-info text-uppercase" onclick="logout()" id="nav-logout">logout</button>
             </li>
         </div>
@@ -263,6 +266,11 @@
     </div>
   </section>
   <!-- END Discussion Page -->
+
+  <!-- testing login berhasil dan dapet token -->
+  <div class="testing-login">
+    <h1>success login</h1>
+  </div>
   <!-- testing login berhasil dan dapet token -->
 
   <footer id="footer">
