@@ -3,12 +3,15 @@ const SERVER = "http://localhost:3000"
 
 $(document).ready(() => {
   const token = localStorage.getItem('token');
+  const name = localStorage.getItem('name');
+  const id = localStorage.getItem('id');
   if (token) {
     afterLogin()
     renderLaunches()
 
     //testing login berhasil dan dpt token ***
     $(".testing-login").append(`<p>token: ${token}</p>`).show()
+    $("#username").append(`<p class="nav-link">${name}</p>`).show()
     //testing diatas, adalah login berhasil dan dpt token
   } else {
     homeBeforeLogin()
@@ -112,8 +115,13 @@ function login(e) {
     })
     .done(response => {
       const token = response.access_token;
+      const data = response.data;
+      const name = data.name
+      const id = data.id
       // console.log(token)
       localStorage.setItem('token', token);
+      localStorage.setItem('name', name);
+      localStorage.setItem('id', id);
       // renderLaunches()
       $("#login-page").hide()
       $("#homepage").show()

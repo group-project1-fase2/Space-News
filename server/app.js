@@ -6,6 +6,7 @@ const cors = require('cors');
 const routes = require('./routes/spaceX');
 
 const authRouter = require('./routes/auth')
+const nasaRouter = require('./routes/nasa')
 
 const errorHandlers = require('./middlewares/errorHandler');
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 app.use("/spaceX", routes)
+app.use("/nasa", nasaRouter)
 app.use('/auth', authRouter);
 app.use(errorHandlers);
 

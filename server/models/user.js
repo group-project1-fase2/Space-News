@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
+
+    fullName(){
+      return this.first_name + ' ' + this.last_name
+    }
+    
   };
   User.init({
     first_name: {
