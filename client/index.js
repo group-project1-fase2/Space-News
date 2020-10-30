@@ -99,7 +99,18 @@ function register(e) {
       }
     })
     .done(response => {
-      // console.log(response);
+      $("#login-page").show()
+      $("#homepage").hide()
+      $("#register").hide()
+      $("#section-rocket").hide()
+      $("#section-space").hide()
+      $("#jumbotron").hide()
+      $("#footer").hide()
+      $("#nav-logout").hide()
+      $("#nav-login").hide()
+      $("#nav-register").hide()
+      $("#news").hide()
+      $("#discussion").hide()
     })
     .fail(err => {
       console.log(err);
@@ -341,6 +352,22 @@ function renderNasaLandingPage(day) {
   .fail(err => console.log(err))
 }
 
-
+function addComment(userId, nasaId, comment) {
+  $.ajax({
+    method: "POST",
+    url: SERVER + "/nasa/add-comment",
+    data: {
+      UserId: userId,
+      NasaId: nasaId,
+      comment: comment
+    }
+  })
+  .done(res => {
+    console.log(res);
+  })
+  .catch(err => {
+    console.log(err);
+  })
+}
 
 

@@ -4,7 +4,6 @@ const app = express();
 const PORT = 3000;
 const cors = require('cors');
 const routes = require('./routes/spaceX');
-const nasaRouter = require('./routes/nasa');
 
 const authRouter = require('./routes/auth')
 const nasaRouter = require('./routes/nasa')
